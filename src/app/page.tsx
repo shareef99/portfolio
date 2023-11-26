@@ -8,8 +8,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { blogList } from "@/types/blog";
-import Link from "next/link";
-import { ReactElement } from "react";
 
 export default async function Page() {
   const getBlogs = async () => {
@@ -52,21 +50,21 @@ export default async function Page() {
       responsibilities: [
         <>
           Lead the frontend development of the{" "}
-          <Link
+          <a
             href="https://kmzee.in"
             target="_blank"
             className="underline underline-offset-4 text-bold italic"
           >
             KMZee Merchandise
-          </Link>{" "}
+          </a>{" "}
           e-commerce vertical of{" "}
-          <Link
+          <a
             href="https://kmzee.online"
             target="_blank"
             className="underline underline-offset-4 text-bold italic"
           >
             Kmzee Holding
-          </Link>
+          </a>
           .
         </>,
         "Developed an operation-driven dashboard for multiple clients in the car auction industry, enabling them to control auctions on their application from the dashboard.",
@@ -74,13 +72,13 @@ export default async function Page() {
         <>
           Build a modern, infographic, user-friendly website for our
           company&apos;s tech vertical{" "}
-          <Link
+          <a
             href="https://kmzee.tech"
             target="_blank"
             className="underline underline-offset-4 text-bold italic"
           >
             KMZee Technologies
-          </Link>
+          </a>
           , and clients.
         </>,
         "Streamline the technologies used in making the dashboards for KMZee Holding clients.",
@@ -116,7 +114,9 @@ export default async function Page() {
             <Card key={blog.id}>
               <CardHeader className="space-y-2">
                 <CardTitle>
-                  <Link href={blog.url}>{blog.title}</Link>
+                  <a href={blog.url} target="_blank">
+                    {blog.title}
+                  </a>
                 </CardTitle>
                 <CardDescription>{blog.description}</CardDescription>
               </CardHeader>
@@ -142,9 +142,9 @@ export default async function Page() {
               <CardHeader>
                 <CardTitle>{t.author.name}</CardTitle>
                 <CardDescription>
-                  <Link href={t.author.url} target="_blank">
+                  <a href={t.author.url} target="_blank">
                     {t.author.tagline}
-                  </Link>
+                  </a>
                 </CardDescription>
               </CardHeader>
               <CardContent>{t.text}</CardContent>

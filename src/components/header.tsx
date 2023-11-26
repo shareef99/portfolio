@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { ThemeSwitcher } from "./theme-switcher";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -10,13 +11,13 @@ export default function Header() {
       )}
     >
       <div>
-        <a href="/" className="text-2xl">
+        <Link href="/" className="text-2xl">
           Nadeem Shareef
-        </a>
+        </Link>
       </div>
       <div className={cn("flex justify-between", "lg:space-x-4")}>
         <div className="flex items-center space-x-4">
-          <a href="/blogs">Blogs</a>
+          <Link href="/blogs">Blogs</Link>
           <a href="https://github.com/shareef99" target="_blank">
             Github
           </a>
