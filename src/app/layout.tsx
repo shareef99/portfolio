@@ -3,6 +3,7 @@ import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./theme-provider";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const noto = Noto_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -29,6 +30,7 @@ export default function RootLayout({
         >
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
