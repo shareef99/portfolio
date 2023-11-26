@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { blogList } from "@/types/blog";
+import Link from "next/link";
 
 export default async function Page() {
   const getBlogs = async () => {
@@ -91,19 +92,56 @@ export default async function Page() {
       <section className="my-8 lg:my-16">
         <p className="text-base lg:text-lg">Hi there, I&apos;m</p>
         <h1 className="text-4xl lg:text-6xl my-4">Nadeem Shareef</h1>
-        <p className="text-base lg:text-lg">
-          I&apos;m a software engineer based in Hyderabad, India. I enjoy
-          creating things that live on the internet, whether that be websites,
-          applications, or anything in between. I have been working for 2 year,
-          with a demonstrated history of working in the Computer Software
-          industry. Skilled in Front-end Development. I have 2 years of
-          experience in HTML, CSS, SCSS, JavaScript, Bootstrap, tailwind CSS,
-          StyledComponent, React JS and Next JS. Hence, I have successfully
-          completed several web projects from scratch. Yet, I learn continuously
-          and never stop exploring new technologies. So, I have also gained
-          knowledge of Node JS, Express JS, Mongo DB, Python, firebase and React
-          Native with time.
-        </p>
+        <div className="space-y-4">
+          <p className="text-base lg:text-lg">
+            a passionate software developer who loves building awesome things on
+            the internet, especially the parts you can see and play with. Over
+            the past two years, I&apos;ve been getting better at building
+            frontend of websites, with a focus on making websites not only
+            functional but also look and feel fantastic. The tools I use are
+            ReactJS, NextJS, TypeScript, JavaScript, TailwindCSS, TanStack
+            Query(React Query), Redux, HTML, CSS, SCSS, and many other react
+            libraries to bring digital ideas to life.
+          </p>
+          <p className="text-base lg:text-lg">
+            I&apos;m always on the learning curve, staying updated with the
+            latest tech trends. I make sure to keep my skills sharp. I strongly
+            believe in teamwork to turn your ideas into a real, working website.
+            Whether it&apos;s a business site or a cool web app, count on me to
+            make it happen.
+          </p>
+          <p className="text-base lg:text-lg">
+            Check out{" "}
+            <Link
+              href="/#testimonials"
+              className="underline underline-offset-4 italic font-bold"
+            >
+              testimonials
+            </Link>{" "}
+            to see opinions of some of the peoples I&apos;ve enjoyed working
+            with. They showcase my commitment of working with peoples. Oh, and
+            if you&apos;re curious, I also share my insights and experiences
+            through blogs on{" "}
+            <Link
+              href="https://dev.to/shareef"
+              className="underline underline-offset-4 italic font-bold"
+              target="_blank"
+            >
+              Dev.to
+            </Link>
+            , where I get around 3k to 4k weekly views. It&apos;s a platform
+            where I love discussing tech topics and sharing what I&apos;ve
+            learned. If you&apos;re looking for a developer who not only knows
+            their stuff but also enjoys turning ideas into reality,{" "}
+            <Link
+              href="https://linkedin.com/in/nadeem-shareef"
+              className="underline underline-offset-4 italic font-bold"
+            >
+              let&apos;s chat
+            </Link>
+            . I&apos;m excited to help bring your digital dreams to life!
+          </p>
+        </div>
       </section>
       <section className="my-8 lg:my-16">
         <h2 className="text-3xl mb-8 underline underline-offset-8">
@@ -132,7 +170,7 @@ export default async function Page() {
           ))}
         </div>
       </section>
-      <section className="my-8 lg:my-16">
+      <section className="my-8 lg:my-16" id="testimonials">
         <h2 className="text-3xl mb-8 underline underline-offset-8">
           Testimonials
         </h2>
