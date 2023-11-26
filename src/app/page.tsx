@@ -2,9 +2,8 @@ import { ThemeSwitcher } from "@/components/theme-switcher";
 
 export default function Page() {
   return (
-    <main>
-      <ThemeSwitcher />
-      <h1>Shareef</h1>
+    <main className="container">
+      <h1>Home Page</h1>
     </main>
   );
 }
