@@ -15,7 +15,7 @@ export default function Header() {
           Nadeem Shareef
         </Link>
       </div>
-      <div className={cn("flex justify-between", "lg:space-x-4")}>
+      <div className={"flex justify-between lg:space-x-4"}>
         <div className="flex items-center space-x-4">
           <Link href="/blogs">Blogs</Link>
           <a href="https://github.com/shareef99" target="_blank">
