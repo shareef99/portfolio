@@ -55,7 +55,7 @@ export default async function Page() {
           <Link
             href="https://kmzee.in"
             target="_blank"
-            className="underline underline-offset-4"
+            className="underline underline-offset-4 text-bold italic"
           >
             KMZee Merchandise
           </Link>{" "}
@@ -63,10 +63,11 @@ export default async function Page() {
           <Link
             href="https://kmzee.online"
             target="_blank"
-            className="underline underline-offset-4"
+            className="underline underline-offset-4 text-bold italic"
           >
             Kmzee Holding
           </Link>
+          .
         </>,
         "Developed an operation-driven dashboard for multiple clients in the car auction industry, enabling them to control auctions on their application from the dashboard.",
         "Designed reusable React components with TypeScript that reduced development time and improved code quality and maintainability.",
@@ -76,7 +77,7 @@ export default async function Page() {
           <Link
             href="https://kmzee.tech"
             target="_blank"
-            className="underline underline-offset-4"
+            className="underline underline-offset-4 text-bold italic"
           >
             KMZee Technologies
           </Link>
@@ -159,11 +160,15 @@ export default async function Page() {
           {experiences.map((e, i) => (
             <div key={i} className="space-y-4">
               <div className="space-x-4 flex items-center">
-                <span className="text-xl lg:text-2xl">{e.company.name}</span>
+                <span className="text-lg lg:text-2xl">
+                  <a href={e.company.url}>{e.company.name}</a>
+                </span>
                 <span>-</span>
-                <span>{e.duration}</span>
+                <span className="text-base lg:text-xl">{e.role}</span>
               </div>
-              <div className="space-x-4 flex items-center">
+              <div className="space-x-2 text-sm flex items-center">
+                <span className="dark:text-slate-300">{e.duration}</span>
+                <span className="">-</span>
                 <span className="dark:text-slate-300">
                   {e.company.location}
                 </span>
