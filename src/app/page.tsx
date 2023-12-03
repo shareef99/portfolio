@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { blogList } from "@/types/blog";
+import { BlogList } from "@/types/blog";
 import Link from "next/link";
 
 export default async function Page() {
@@ -16,7 +16,7 @@ export default async function Page() {
       "https://dev.to/api/articles?username=shareef&page=1&per_page=6"
     );
     const data = await res.json();
-    return data as blogList[];
+    return data as BlogList[];
   };
 
   const blogs = await getBlogs();
@@ -152,9 +152,7 @@ export default async function Page() {
             <Card key={blog.id}>
               <CardHeader className="space-y-2">
                 <CardTitle>
-                  <a href={blog.url} target="_blank">
-                    {blog.title}
-                  </a>
+                  <Link href={`blogs/${blog.slug}`}>{blog.title}</Link>
                 </CardTitle>
                 <CardDescription>{blog.description}</CardDescription>
               </CardHeader>

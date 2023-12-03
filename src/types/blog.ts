@@ -1,4 +1,4 @@
-export type blogList = {
+export type BlogList = {
   type_of: string;
   id: number;
   title: string;
@@ -38,4 +38,11 @@ export type blogList = {
     bg_color_hex: string;
     text_color_hex: string;
   };
+};
+
+export type Blog = BlogList & {
+  tag_list: string;
+  tags: string[];
+  body_html: string;
+  body_markdown: string;
 };

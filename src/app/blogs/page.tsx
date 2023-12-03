@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { blogList } from "@/types/blog";
+import { BlogList } from "@/types/blog";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -17,13 +17,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const getBlogs = async () => {
-    const res = await fetch("https://dev.to/api/articles?username=shareef");
-    const data = await res.json();
-    return data as blogList[];
-  };
-
-  const blogs = await getBlogs();
+  const res = await fetch("https://dev.to/api/articles?username=shareef");
+  const blogs: BlogList[] = await res.json();
 
   return (
     <main className="container">
@@ -36,7 +31,7 @@ export default async function Page() {
             <Card key={blog.id}>
               <CardHeader className="space-y-2">
                 <CardTitle>
-                  <Link href={blog.url}>{blog.title}</Link>
+                  <Link href={`/blogs/${blog.slug}`}>{blog.title}</Link>
                 </CardTitle>
                 <CardDescription>{blog.description}</CardDescription>
               </CardHeader>
