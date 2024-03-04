@@ -11,15 +11,12 @@ import { BlogList } from "@/types/blog";
 import Link from "next/link";
 
 export default async function Page() {
-  const getBlogs = async () => {
-    const res = await fetch(
-      "https://dev.to/api/articles?username=shareef&page=1&per_page=6"
-    );
-    const data = await res.json();
-    return data as BlogList[];
-  };
+  const res = await fetch(
+    "https://dev.to/api/articles?username=shareef&page=1&per_page=6"
+  );
+  const data = await res.json();
+  const blogs = data as BlogList[];
 
-  const blogs = await getBlogs();
   const testimonials = [
     {
       text: "I have hired Nadeem as a coach to help me get started with React development, as I am working on a new SaaS project. Nadeem is a great teacher who is able to simplify complex concepts. I also very much value his ability to point out the pros and cons of different technical approaches to solving a particular problem or process.",
