@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Blog } from "@/types/blog";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 type Props = {
   params: { slug: string };
@@ -26,7 +26,15 @@ export async function generateMetadata({
     robots: "index follow",
     openGraph: {
       images: [blog.social_image],
-      duration: blog.reading_time_minutes,
+      type: "article",
+      authors: blog.user.name,
+      description: blog.description,
+      emails: "nadeemshareef934@gmail.com",
+      publishedTime: blog.published_at,
+      tags: blog.tags,
+      title: blog.title,
+      url: `https://dev.to/shareef/${slug}`,
+      modifiedTime: blog.edited_at ? blog.edited_at : blog.published_at,
     },
   };
 }
