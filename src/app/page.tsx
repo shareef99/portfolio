@@ -160,6 +160,16 @@ export default async function Page() {
                 {blog.tag_list.map((tag) => (
                   <Badge key={tag}>{tag}</Badge>
                 ))}
+                <Badge
+                  variant="outline"
+                  className="sm:ml-auto lg:ml-0 xl:ml-auto"
+                >
+                  {new Date(blog.published_at).getDate() < 10 ? "0" : ""}
+                  {new Date(blog.published_at).getDate()}-
+                  {new Date(blog.published_at).getMonth() < 10 ? "0" : ""}
+                  {new Date(blog.published_at).getMonth()}-
+                  {new Date(blog.published_at).getFullYear()}
+                </Badge>
               </CardFooter>
             </Card>
           ))}
