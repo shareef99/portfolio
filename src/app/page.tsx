@@ -209,9 +209,9 @@ export default async function Page() {
                 <span>-</span>
                 <span className="text-base lg:text-xl">{e.role}</span>
               </div>
-              <div className="space-x-2 text-sm flex items-center">
+              <div className="gap-2 text-sm flex flex-col sm:flex-row items-start sm:items-center">
                 <span className="dark:text-slate-300">{e.duration}</span>
-                <span className="">-</span>
+                <span className="hidden sm:block">-</span>
                 <span className="dark:text-slate-300">
                   {e.company.location}
                 </span>
