@@ -37,7 +37,7 @@ export default async function Page({
 
   return (
     <main className="container">
-      <section className="my-8 lg:my-16">
+      <section className="my-8 lg:my-12">
         <h1 className="text-3xl mb-8 underline underline-offset-8">
           All Blogs
         </h1>
