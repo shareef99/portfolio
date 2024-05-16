@@ -17,15 +17,24 @@ export default function Header() {
       </div>
       <div className={"flex justify-between lg:space-x-4"}>
         <div className="flex items-center space-x-4">
+          <Link href="/shareef-resume.pdf">Resume</Link>
           <Link href="/about">About</Link>
           <Link href="/blogs">Blogs</Link>
-          <a href="https://github.com/shareef99" target="_blank">
+          <a
+            href="https://github.com/shareef99"
+            target="_blank"
+            className="hidden sm:block"
+          >
             Github
           </a>
           <a href="https://www.linkedin.com/in/nadeem-shareef/" target="_blank">
             LinkedIn
           </a>
-          <a href="https://www.dev.to/shareef" target="_blank">
+          <a
+            href="https://www.dev.to/shareef"
+            target="_blank"
+            className="hidden sm:block"
+          >
             Dev.to
           </a>
         </div>
