@@ -18,9 +18,9 @@ export default tseslint.config(
       "**/dist/**",
       "**/node_modules/**",
       "eslint.config.js",
-      "packages/supabase-client/src/types.ts",
       ".github/scripts/**",
     ],
+    extends: ["next"],
   },
   eslint.configs.recommended,
   jsxA11y.flatConfigs.recommended,
@@ -51,6 +51,7 @@ export default tseslint.config(
       },
     },
     rules: {
+      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@typescript-eslint/consistent-type-imports": [
         "error",
         {
