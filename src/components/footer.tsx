@@ -6,13 +6,13 @@ export default function Footer() {
     <footer className="container my-8 flex space-y-2 items-center flex-col justify-center">
       <div className="flex items-center space-x-4">
         <Link href="/blogs">Blogs</Link>
-        <a href="https://github.com/shareef99" target="_blank">
+        <a href="https://github.com/shareef99" rel="noreferrer" target="_blank">
           Github
         </a>
-        <a href="https://www.linkedin.com/in/nadeem-shareef/" target="_blank">
+        <a href="https://www.linkedin.com/in/nadeem-shareef/" rel="noreferrer" target="_blank">
           LinkedIn
         </a>
-        <a href="https://www.dev.to/shareef" target="_blank">
+        <a href="https://www.dev.to/shareef" rel="noreferrer" target="_blank">
           Dev.to
         </a>
       </div>

@@ -40,17 +40,19 @@ export default function Page() {
         <>
           Lead the frontend development of the{" "}
           <a
-            href="https://kmzee.in"
-            target="_blank"
             className="underline underline-offset-4 text-bold italic"
+            href="https://kmzee.in"
+            rel="noreferrer"
+            target="_blank"
           >
             KMZee Merchandise
           </a>{" "}
           e-commerce vertical of{" "}
           <a
-            href="https://kmzee.online"
-            target="_blank"
             className="underline underline-offset-4 text-bold italic"
+            href="https://kmzee.online"
+            rel="noreferrer"
+            target="_blank"
           >
             Kmzee Holding
           </a>
@@ -62,9 +64,10 @@ export default function Page() {
           Build a modern, infographic, user-friendly website for our
           company&apos;s tech vertical{" "}
           <a
-            href="https://kmzee.tech"
-            target="_blank"
             className="underline underline-offset-4 text-bold italic"
+            href="https://kmzee.tech"
+            rel="noreferrer"
+            target="_blank"
           >
             KMZee Technologies
           </a>
@@ -92,8 +95,8 @@ export default function Page() {
           Experience
         </h2>
         <div>
-          {experiences.map((e, i) => (
-            <div key={i} className="space-y-4">
+          {experiences.map((e) => (
+            <div className="space-y-4" key={e.company.name}>
               <div className="space-x-4 flex items-center">
                 <span className="text-lg lg:text-2xl">
                   <a href={e.company.url}>{e.company.name}</a>
@@ -107,11 +110,13 @@ export default function Page() {
                 <span className="dark:text-slate-300">
                   {e.company.location}
                 </span>
-                {e.company.remote && <Badge variant="secondary">remote</Badge>}
+                {e.company.remote ? (
+                  <Badge variant="secondary">remote</Badge>
+                ) : null}
               </div>
               <ul className="list-inside space-y-2">
-                {e.responsibilities.map((r, i) => (
-                  <li key={i} className="list-disc text-base">
+                {e.responsibilities.map((r) => (
+                  <li className="list-disc text-base" key={r.toString()}>
                     {typeof r === "string" ? <span>{r}</span> : r}
                   </li>
                 ))}
@@ -125,12 +130,12 @@ export default function Page() {
           Testimonials
         </h2>
         <div className="grid grid-cols-1 gap-8 place-items-start lg:grid-cols-2">
-          {testimonials.map((t, i) => (
-            <Card key={i} className="">
+          {testimonials.map((t) => (
+            <Card className="" key={t.author.name}>
               <CardHeader>
                 <CardTitle>{t.author.name}</CardTitle>
                 <CardDescription>
-                  <a href={t.author.url} target="_blank">
+                  <a href={t.author.url} rel="noreferrer" target="_blank">
                     {t.author.tagline}
                   </a>
                 </CardDescription>

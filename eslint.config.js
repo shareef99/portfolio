@@ -20,6 +20,7 @@ export default tseslint.config(
       "**/node_modules/**",
       "eslint.config.js",
       ".github/scripts/**",
+      ".next/**",
     ],
   },
   eslint.configs.recommended,

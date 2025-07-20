@@ -1,3 +1,5 @@
+import { type Metadata } from "next";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -6,9 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { BlogList } from "@/types/blog";
-import { Metadata } from "next";
-import Link from "next/link";
 import {
   Pagination,
   PaginationContent,
@@ -17,6 +16,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { type BlogList } from "@/types/blog";
 
 export const metadata: Metadata = {
   title: "Blogs | Shareef",
@@ -75,16 +75,19 @@ export default async function Page({
                 href={`blogs?page=${Number(page) - 1 || 1}`}
               />
             </PaginationItem>
-            {Array.from({ length: totalPages }).map((_, index) => (
-              <PaginationItem key={index}>
-                <PaginationLink
-                  href={`blogs?page=${index + 1}`}
-                  isActive={index + 1 === Number(page)}
-                >
-                  {index + 1}
-                </PaginationLink>
-              </PaginationItem>
-            ))}
+            {Array.from({ length: totalPages }).map((_, index) => {
+              const pageNumber = index + 1;
+              return (
+                <PaginationItem key={pageNumber}>
+                  <PaginationLink
+                    href={`blogs?page=${pageNumber}`}
+                    isActive={pageNumber === Number(page)}
+                  >
+                    {pageNumber}
+                  </PaginationLink>
+                </PaginationItem>
+              );
+            })}
             <PaginationItem>
               <PaginationNext
                 href={`blogs?page=${

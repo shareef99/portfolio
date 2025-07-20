@@ -1,14 +1,13 @@
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { BlogList } from "@/types/blog";
-import Link from "next/link";
+import { type BlogList } from "@/types/blog";
 
 export default async function Page() {
   const res = await fetch(
@@ -43,8 +42,8 @@ export default async function Page() {
           <p className="text-base lg:text-lg">
             Check out{" "}
             <Link
-              href="/#testimonials"
               className="underline underline-offset-4 italic font-bold"
+              href="/#testimonials"
             >
               testimonials
             </Link>{" "}
@@ -53,8 +52,8 @@ export default async function Page() {
             if you&apos;re curious, I also share my insights and experiences
             through blogs on{" "}
             <Link
-              href="https://dev.to/shareef"
               className="underline underline-offset-4 italic font-bold"
+              href="https://dev.to/shareef"
               target="_blank"
             >
               Dev.to
@@ -64,8 +63,8 @@ export default async function Page() {
             learned. If you&apos;re looking for a developer who not only knows
             their stuff but also enjoys turning ideas into reality,{" "}
             <Link
-              href="https://linkedin.com/in/nadeem-shareef"
               className="underline underline-offset-4 italic font-bold"
+              href="https://linkedin.com/in/nadeem-shareef"
             >
               let&apos;s chat
             </Link>
@@ -94,8 +93,8 @@ export default async function Page() {
                   <Badge key={tag}>{tag}</Badge>
                 ))}
                 <Badge
-                  variant="outline"
                   className="sm:ml-auto lg:ml-0 xl:ml-auto"
+                  variant="outline"
                 >
                   {new Date(blog.published_at).getDate() < 10 ? "0" : ""}
                   {new Date(blog.published_at).getDate()}-
