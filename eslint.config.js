@@ -20,7 +20,6 @@ export default tseslint.config(
       "eslint.config.js",
       ".github/scripts/**",
     ],
-    extends: ["next"],
   },
   eslint.configs.recommended,
   jsxA11y.flatConfigs.recommended,
@@ -218,5 +217,6 @@ export default tseslint.config(
   // Keep Prettier last so it won't fight with ESLint
   {
     rules: { ...eslintConfigPrettier.rules },
-  }
+  },
+  { extends: "next/core-web-vitals" }
 );
