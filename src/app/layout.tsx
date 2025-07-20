@@ -1,10 +1,10 @@
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
-import { ThemeProvider } from "./theme-provider";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { Analytics } from "@vercel/analytics/react";
+import Header from "@/components/header";
 
 const noto = Noto_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={noto.className}>
         <ThemeProvider
           attribute="class"
