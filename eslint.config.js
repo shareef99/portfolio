@@ -51,7 +51,7 @@ export default tseslint.config(
       },
     },
     plugins: {
-      next: nextPlugin,
+      "@next/next": nextPlugin,
     },
     rules: {
       ...nextPlugin.configs["core-web-vitals"].rules,
