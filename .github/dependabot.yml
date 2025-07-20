@@ -5,7 +5,7 @@
 
 version: 2
 updates:
-  - package-ecosystem: "pnpm" # or "yarn"
+  - package-ecosystem: "npm" # or "yarn"
     directory: "/" # location of package.json
     schedule:
       interval: "daily"
