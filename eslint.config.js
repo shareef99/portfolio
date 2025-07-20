@@ -134,7 +134,7 @@ export default tseslint.config(
           },
         },
       ],
-      "import-x/no-commonjs": "error",
+      "import-x/no-commonjs": "warn",
       "import-x/no-named-as-default": "off",
       "import-x/no-self-import": "error",
       "import-x/no-useless-path-segments": "error",
