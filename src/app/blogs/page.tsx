@@ -25,10 +25,11 @@ export const metadata: Metadata = {
 };
 
 export default async function Page({
-  searchParams: { page = "1" },
+  searchParams,
 }: {
-  searchParams: { page?: string };
+  searchParams: Promise<{ page?: string }>;
 }) {
+  const { page = "1" } = await searchParams;
   const res = await fetch("https://dev.to/api/articles?username=shareef");
   const blogs: BlogList[] = await res.json();
 
