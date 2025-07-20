@@ -2,14 +2,12 @@ import { type Metadata } from "next";
 import { cn } from "@/lib/utils";
 import type { Blog } from "@/types/blog";
 
-type Props = Promise<{
-  params: { slug: string };
-}>;
+type Props = {
+  params: Promise<{ slug: string }>;
+};
 
-export async function generateMetadata(props: Props): Promise<Metadata> {
-  const {
-    params: { slug },
-  } = await props;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
 
   const blog: Blog = await fetch(
     `https://dev.to/api/articles/shareef/${slug}`
@@ -29,10 +27,8 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   };
 }
 
-export default async function Page(props: Props) {
-  const {
-    params: { slug },
-  } = await props;
+export default async function Page({ params }: Props) {
+  const { slug } = await params;
   const res = await fetch(`https://dev.to/api/articles/shareef/${slug}`);
   const blog: Blog = await res.json();
 
