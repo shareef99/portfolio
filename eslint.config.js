@@ -7,6 +7,7 @@ import * as parser from "@typescript-eslint/parser";
 import * as pluginImportX from "eslint-plugin-import-x";
 import tseslint from "typescript-eslint";
 import reactPlugin from "eslint-plugin-react";
+import nextPlugin from "@next/eslint-plugin-next";
 
 export default tseslint.config(
   {
@@ -49,7 +50,11 @@ export default tseslint.config(
         version: "detect",
       },
     },
+    plugins: {
+      next: nextPlugin,
+    },
     rules: {
+      ...nextPlugin.configs["core-web-vitals"].rules,
       "@typescript-eslint/consistent-type-definitions": ["error", "type"],
       "@typescript-eslint/consistent-type-imports": [
         "error",
@@ -217,6 +222,5 @@ export default tseslint.config(
   // Keep Prettier last so it won't fight with ESLint
   {
     rules: { ...eslintConfigPrettier.rules },
-  },
-  { extends: "next/core-web-vitals" }
+  }
 );
